@@ -48,5 +48,9 @@ export default function useTasks() {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
-  return { tasks, addTask, toggleTask, deleteTask };
+  const clearCompleted = () => {
+    setTasks((prev) => prev.filter((task) => !task.completed));
+  };
+
+  return { tasks, addTask, toggleTask, deleteTask, clearCompleted };
 }
