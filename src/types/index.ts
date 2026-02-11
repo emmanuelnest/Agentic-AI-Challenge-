@@ -15,3 +15,5 @@ export interface Task {
 }
 
 export type FilterStatus = 'all' | 'active' | 'completed';
+
+export type Theme = 'light' | 'dark';

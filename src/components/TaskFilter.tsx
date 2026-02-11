@@ -23,7 +23,7 @@ export default function TaskFilter({
 }: TaskFilterProps) {
   return (
     <div className="flex items-center justify-between py-3 px-1 text-sm">
-      <span className="text-gray-500">
+      <span className="text-gray-500 dark:text-gray-400">
         {activeCount} {activeCount === 1 ? 'task' : 'tasks'} remaining
       </span>
       <div className="flex gap-1">
@@ -34,7 +34,7 @@ export default function TaskFilter({
             className={`px-3 py-1 rounded transition-colors ${
               filter === key
                 ? 'bg-blue-500 text-white'
-                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100'
+                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-700'
             }`}
           >
             {label}
@@ -44,7 +44,7 @@ export default function TaskFilter({
       {completedCount > 0 && (
         <button
           onClick={onClearCompleted}
-          className="text-sm text-red-500 hover:text-red-700 hover:underline"
+          className="text-sm text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 hover:underline"
         >
           Clear completed
         </button>
