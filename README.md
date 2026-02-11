@@ -39,7 +39,23 @@ This project uses **AI Developer Workflows (ADWs)** to automate development:
 ```
 .claude/
 ├── commands/           # Slash commands (/feature, /chore, etc.)
-└── hooks/             # Git hooks
+│   ├── install.md      # Project setup and initialization
+│   ├── prime.md        # Understand codebase
+│   ├── start.md        # Start dev server
+│   ├── test.md         # Run validation tests
+│   ├── feature.md      # Plan new features
+│   ├── bug.md          # Plan bug fixes
+│   ├── patch.md        # Quick fixes
+│   ├── implement.md    # Execute plans
+│   ├── review.md       # Review implementations
+│   ├── document.md     # Generate documentation
+│   ├── commit.md       # Create git commits
+│   ├── pull_request.md # Create PRs
+│   ├── generate_branch_name.md
+│   ├── classify_issue.md
+│   └── conditional_docs.md
+├── hooks/             # Git hooks (optional)
+└── settings.json      # Permissions and configuration
 
 adws/
 ├── adw_modules/       # Core ADW functionality
@@ -52,7 +68,43 @@ adws/
 └── adw_plan_build.py  # Combined workflow
 
 specs/                 # Generated implementation plans
+├── patch/            # Patch plans for quick fixes
+└── *.md              # Feature and bug plans
+
+app_docs/             # Generated feature documentation
+└── assets/           # Screenshots and images
 ```
+
+### Available Commands
+
+Use these slash commands in Claude Code:
+
+**Setup & Development:**
+- `/install` - Initialize project and install dependencies
+- `/prime` - Understand the codebase structure
+- `/start` - Start the development server
+
+**Planning:**
+- `/feature` - Plan a new feature from GitHub issue
+- `/bug` - Plan a bug fix from GitHub issue
+- `/chore` - Plan maintenance tasks
+- `/patch` - Create quick fix plan
+
+**Implementation:**
+- `/implement <plan-path>` - Execute an implementation plan
+- `/test` - Run validation suite (TypeScript, ESLint, build)
+- `/review <adw-id> <spec-path>` - Review implementation against spec
+
+**Git Operations:**
+- `/commit` - Create a git commit with proper message
+- `/pull_request` - Create a pull request
+
+**Documentation:**
+- `/document <adw-id> <spec-path>` - Generate feature documentation
+
+**Utilities:**
+- `/classify_issue <issue-json>` - Classify GitHub issue type
+- `/generate_branch_name <type> <adw-id> <issue-json>` - Generate branch name
 
 ## 🚀 Getting Started
 
