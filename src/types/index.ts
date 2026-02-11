@@ -5,3 +5,5 @@ export interface Task {
   completed: boolean;
   createdAt: Date;
 }
+
+export type FilterStatus = 'all' | 'active' | 'completed';

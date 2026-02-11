@@ -5,13 +5,19 @@ interface TaskListProps {
   tasks: Task[];
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
+  emptyMessage?: string;
 }
 
-export default function TaskList({ tasks, onToggle, onDelete }: TaskListProps) {
+export default function TaskList({
+  tasks,
+  onToggle,
+  onDelete,
+  emptyMessage = 'No tasks yet. Add one above!',
+}: TaskListProps) {
   if (tasks.length === 0) {
     return (
       <div className="text-center py-12 text-gray-400">
-        <p>No tasks yet. Add one above!</p>
+        <p>{emptyMessage}</p>
       </div>
     );
   }
