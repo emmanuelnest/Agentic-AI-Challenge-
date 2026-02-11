@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -10,7 +10,8 @@ function App() {
           Task Manager - Agentic AI Challenge
         </h1>
         <p className="text-gray-600 mb-4">
-          This is the initial setup. Features will be implemented using AI agents!
+          This is the initial setup. Features will be implemented using AI
+          agents!
         </p>
         <div className="flex items-center gap-4">
           <button
@@ -25,7 +26,7 @@ function App() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
