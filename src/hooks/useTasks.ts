@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Task } from '../types';
+import { Task, TaskCategory } from '../types';
 
 const STORAGE_KEY = 'task-manager-tasks';
 
@@ -8,10 +8,11 @@ function loadTasks(): Task[] {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) return [];
     const parsed = JSON.parse(stored) as Array<
-      Omit<Task, 'createdAt'> & { createdAt: string }
+      Omit<Task, 'createdAt'> & { createdAt: string; category?: TaskCategory }
     >;
     return parsed.map((task) => ({
       ...task,
+      category: task.category ?? 'other',
       createdAt: new Date(task.createdAt),
     }));
   } catch {
@@ -26,11 +27,12 @@ export default function useTasks() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (title: string) => {
+  const addTask = (title: string, category: TaskCategory) => {
     const newTask: Task = {
       id: crypto.randomUUID(),
       title,
       completed: false,
+      category,
       createdAt: new Date(),
     };
     setTasks((prev) => [...prev, newTask]);

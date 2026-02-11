@@ -1,4 +1,5 @@
 import { Task } from '../types';
+import { getCategoryConfig } from '../utils/categories';
 
 interface TaskItemProps {
   task: Task;
@@ -7,6 +8,8 @@ interface TaskItemProps {
 }
 
 export default function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
+  const categoryConfig = getCategoryConfig(task.category);
+
   return (
     <li className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm border border-gray-100 group">
       <input
@@ -15,6 +18,11 @@ export default function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
         onChange={() => onToggle(task.id)}
         className="w-5 h-5 rounded border-gray-300 text-blue-500 focus:ring-blue-500 cursor-pointer"
       />
+      <span
+        className={`px-2 py-0.5 text-xs font-medium rounded-full ${categoryConfig.bgColor} ${categoryConfig.textColor}`}
+      >
+        {categoryConfig.label}
+      </span>
       <span
         className={`flex-1 ${task.completed ? 'line-through text-gray-400' : 'text-gray-800'}`}
       >
