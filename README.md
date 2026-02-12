@@ -2,7 +2,7 @@
 
 A modern task management application built entirely using AI agents following the **plan → build → test** workflow.
 
-🔗 **Live Demo**: [https://agentic-ai-challenge-git-fea-a0ce12-emmanuels-projects-d12ad1b8.vercel.app/](https://agentic-ai-challenge-git-fea-a0ce12-emmanuels-projects-d12ad1b8.vercel.app/)
+🔗 **Live Demo**: [https://agentic-ai-challenge-snowy.vercel.app/](https://agentic-ai-challenge-snowy.vercel.app/)
 
 ## 🎯 Project Overview
 
@@ -311,7 +311,7 @@ This project fulfills the **Agentic AI Challenge** requirements:
 
 **Content**:
 - GitHub Issue URL: `https://github.com/emmanuelnest/Agentic-AI-Challenge-/issues/X`
-- Vercel URL: `https://agentic-ai-challenge-git-fea-a0ce12-emmanuels-projects-d12ad1b8.vercel.app/`
+- Vercel URL: `https://agentic-ai-challenge-snowy.vercel.app/`
 - Repository URL: `https://github.com/emmanuelnest/Agentic-AI-Challenge-`
 
 ## 🔒 Environment Variables
